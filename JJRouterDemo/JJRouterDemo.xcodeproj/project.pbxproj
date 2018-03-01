@@ -18,6 +18,7 @@
 		09E884CE2047DE9800D5625D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E884CD2047DE9800D5625D /* SecondViewController.m */; };
 		09E884D42047EE2E00D5625D /* ErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E884D32047EE2E00D5625D /* ErrorViewController.m */; };
 		09E884D82047FDBB00D5625D /* JJRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E884D62047FDBB00D5625D /* JJRouter.m */; };
+		09E884DB2047FF0300D5625D /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E884DA2047FF0300D5625D /* ThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		09E884D32047EE2E00D5625D /* ErrorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorViewController.m; sourceTree = "<group>"; };
 		09E884D62047FDBB00D5625D /* JJRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJRouter.m; sourceTree = "<group>"; };
 		09E884D72047FDBB00D5625D /* JJRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJRouter.h; sourceTree = "<group>"; };
+		09E884D92047FF0300D5625D /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		09E884DA2047FF0300D5625D /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				09E884852047CB7400D5625D /* ViewController.m */,
 				09E884CC2047DE9800D5625D /* SecondViewController.h */,
 				09E884CD2047DE9800D5625D /* SecondViewController.m */,
+				09E884D92047FF0300D5625D /* ThirdViewController.h */,
+				09E884DA2047FF0300D5625D /* ThirdViewController.m */,
 				09E884D22047EE2E00D5625D /* ErrorViewController.h */,
 				09E884D32047EE2E00D5625D /* ErrorViewController.m */,
 				09E884872047CB7400D5625D /* Main.storyboard */,
@@ -295,6 +300,7 @@
 				09E884D42047EE2E00D5625D /* ErrorViewController.m in Sources */,
 				09E884912047CB7400D5625D /* main.m in Sources */,
 				09E884832047CB7400D5625D /* AppDelegate.m in Sources */,
+				09E884DB2047FF0300D5625D /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
