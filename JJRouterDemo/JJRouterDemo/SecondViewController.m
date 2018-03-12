@@ -11,25 +11,25 @@
 
 @interface SecondViewController ()
 
-/** 控制器 */
-@property (nonatomic,strong) UIViewController *controller;
+/** callback */
+@property (nonatomic,strong) JJRouterCallBack callBack;
 
 @end
 
 @implementation SecondViewController
 
 + (void)load {
-    [JJRouter routerRegisterUrl:[NSString stringWithFormat:@"%@",NSStringFromClass([self class])] handler:^(JJRouterResponse *response) {
-       
-        NSLog(@"%@",response.params);
+    [JJRouter routerRegisterUrl:NSStringFromClass([self class]) handler:^(JJRouterResponse *response) {
+
+        NSLog(@"SecondViewController:%@",response.params);
         //打开捕获异常
 //        NSMutableArray *array = [NSMutableArray array];
 //        [array addObject:response.params[@"a"]];
-        
+
         SecondViewController *second = [[SecondViewController alloc] init];
-        second.controller = response.viewController;
+        second.callBack = response.callBack;
         [response.viewController.navigationController pushViewController:second animated:YES];
-        
+
     }];
 }
 
@@ -43,15 +43,20 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-    
-    CGFloat r = arc4random_uniform(255) / 255.0;
-    CGFloat g = arc4random_uniform(255) / 255.0;
-    CGFloat b = arc4random_uniform(255) / 255.0;
 
-    [JJRouter routerOpenUrl:@"ViewController" params:@{@"color":[UIColor colorWithRed:r green:g blue:b alpha:1.0]} viewController:self.controller];
+    
+//    CGFloat r = arc4random_uniform(255) / 255.0;
+//    CGFloat g = arc4random_uniform(255) / 255.0;
+//    CGFloat b = arc4random_uniform(255) / 255.0;
+//
+//    UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
+//    !self.callBack ? : self.callBack(color);
+//
+//    [self.navigationController popViewControllerAnimated:YES];
+    
     
     //跳转第三个页面
-//    [JJRouter routerOpenUrl:@"ThirdViewController" params:nil viewController:self];
+    [JJRouter routerOpenUrl:@"ThirdViewController" params:nil viewController:self];
 
     
     

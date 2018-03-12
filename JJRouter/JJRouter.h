@@ -9,25 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+/**
+ block
+
+ @param callBack 返回对象
+ */
+typedef void(^JJRouterCallBack)(id callBack);
+
 @interface JJRouterResponse : NSObject
 
 /** 参数 */
 @property (nonatomic,strong) NSDictionary *params;
 /** 控制器 */
 @property (nonatomic,strong) UIViewController *viewController;
+/** 返回block */
+@property (nonatomic,strong) JJRouterCallBack callBack;
 
 @end
-
-/**
- 表类型
-
- - JJRouterTableTypeFold: 折叠表
- - JJRouterTableTypeTile: 平铺表
- */
-typedef NS_ENUM(NSInteger, JJRouterTableType) {
-    JJRouterTableTypeFold,
-    JJRouterTableTypeTile
-};
 
 /**
  block
@@ -41,11 +39,6 @@ typedef void(^JJRouterHandler)(JJRouterResponse *response);
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
-
-/**
- 路由内部映射表结构，默认折叠表
- */
-@property (assign, nonatomic) JJRouterTableType tableType;
 
 /**
  获取JJRouter全局唯一单例
@@ -74,7 +67,13 @@ typedef void(^JJRouterHandler)(JJRouterResponse *response);
  @param handler 打开url时触发的block
  */
 + (void)routerRegisterErrorURLWithHandler:(JJRouterHandler)handler;
-
+/**
+ 打开url
+ 
+ @param url url字符串
+ @param viewController 当前控制器
+ */
++ (void)routerOpenUrl:(NSString *)url viewController:(UIViewController *)viewController;
 /**
  打开url
 
@@ -83,7 +82,23 @@ typedef void(^JJRouterHandler)(JJRouterResponse *response);
  @param viewController 当前控制器
  */
 + (void)routerOpenUrl:(NSString *)url params:(NSDictionary *)params viewController:(UIViewController *)viewController;
-
+/**
+ 打开url
+ 
+ @param url url字符串
+ @param viewController 当前控制器
+ @param callBack 返回block
+ */
++ (void)routerOpenUrl:(NSString *)url viewController:(UIViewController *)viewController callBack:(JJRouterCallBack)callBack;
+/**
+ 打开url
+ 
+ @param url url字符串
+ @param params 参数字典
+ @param viewController 当前控制器
+ @param callBack 返回block
+ */
++ (void)routerOpenUrl:(NSString *)url params:(NSDictionary *)params viewController:(UIViewController *)viewController callBack:(JJRouterCallBack)callBack;
 @end
 
 

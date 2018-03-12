@@ -15,16 +15,6 @@
 
 @implementation ViewController
 
-+ (void)load {
-    [JJRouter routerRegisterUrl:[NSString stringWithFormat:@"%@",NSStringFromClass([self class])] handler:^(JJRouterResponse *response) {
-        
-        NSLog(@"%@",response.params);
-        [response.viewController.navigationController popViewControllerAnimated:YES];
-        response.viewController.view.backgroundColor = response.params[@"params"][@"color"];
-        
-        
-    }];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,8 +27,15 @@
 
 - (IBAction)buttonClick {
     
-    [JJRouter routerOpenUrl:@"SecondViewController?type=1" params:@{@"id":@"10"} viewController:self];
-    
+//    [JJRouter routerOpenUrl:@"SecondViewController?type=1" params:@{@"id":@"10"} viewController:self];
+
+    [JJRouter routerOpenUrl:@"SecondViewController?phone=18516779543&password=123456" params:@{@"id":@"10"} viewController:self callBack:^(id callBack) {
+       
+        UIColor *color = callBack;
+        
+        self.view.backgroundColor = color;
+        
+    }];
     
 }
 
