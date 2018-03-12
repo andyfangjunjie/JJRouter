@@ -41,13 +41,6 @@ typedef void(^JJRouterHandler)(JJRouterResponse *response);
 - (instancetype)init NS_UNAVAILABLE;
 
 /**
- 获取JJRouter全局唯一单例
- 
- @return JJRouter单例
- */
-+ (instancetype)sharedRouter;
-
-/**
  判断url是否可被打开
  
  @param url 需要判断的url

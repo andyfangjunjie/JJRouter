@@ -45,18 +45,18 @@
     [super touchesBegan:touches withEvent:event];
 
     
-//    CGFloat r = arc4random_uniform(255) / 255.0;
-//    CGFloat g = arc4random_uniform(255) / 255.0;
-//    CGFloat b = arc4random_uniform(255) / 255.0;
-//
-//    UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
-//    !self.callBack ? : self.callBack(color);
-//
-//    [self.navigationController popViewControllerAnimated:YES];
+    CGFloat r = arc4random_uniform(255) / 255.0;
+    CGFloat g = arc4random_uniform(255) / 255.0;
+    CGFloat b = arc4random_uniform(255) / 255.0;
+
+    UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
+    !self.callBack ? : self.callBack(color);
+
+    [self.navigationController popViewControllerAnimated:YES];
     
     
     //跳转第三个页面
-    [JJRouter routerOpenUrl:@"ThirdViewController" params:nil viewController:self];
+//    [JJRouter routerOpenUrl:@"ThirdViewController" params:nil viewController:self];
 
     
     
